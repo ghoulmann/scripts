@@ -45,13 +45,22 @@ function SerPerms
 
 CHMOD_R="chmod -R"
 CHOWN_R="chown -R"
+SUDO_CHMOD_R="sudo chmod -R"
+SUDO_CHOWN_R="sudo chown -R"
 CHMOD="chmod"
 CHOWN="chown"
+SUDO_CHMOD="sudo chmod"
+SUDO_CHOWN="sudo chown"
 
-SerPerms "$CHMOD"	"$CHOWN"	/home/Void			700 dimanne
-SerPerms "$CHMOD"	"$CHOWN"	/home/Void/Yandex		700 dimanne
-SerPerms "$CHMOD"	"$CHOWN"	/home/Void/YandexDisk		700 dimanne
-SerPerms "$CHMOD"	"$CHOWN"	/home/Void/YandexDiskDecrypted	700 dimanne
-SerPerms "$CHMOD"	"$CHOWN"	/home/Void/pron			700 dimanne
-SerPerms "$CHMOD"	"$CHOWN"	/mnt/backup1			700 dimanne
-SerPerms "$CHMOD_R"	"$CHOWN_R"	/mnt/freedata/People		700 dimanne
+SerPerms "$CHMOD"		"$CHOWN"	/home/Void			700 dimanne:dimanne
+SerPerms "$CHMOD"		"$CHOWN"	/home/Void/Yandex		700 dimanne:dimanne
+SerPerms "$CHMOD"		"$CHOWN"	/home/Void/YandexDisk		700 dimanne:dimanne
+SerPerms "$CHMOD"		"$CHOWN"	/home/Void/YandexDiskDecrypted	700 dimanne:dimanne
+SerPerms "$CHMOD"		"$CHOWN"	/home/Void/pron			700 dimanne:dimanne
+SerPerms "$CHMOD"		"$CHOWN"	/mnt/backup1			700 dimanne:dimanne
+
+SerPerms "$SUDO_CHMOD_R"	"$SUDO_CHOWN_R"	/mnt/freedata/People		700 dimanne:dimanne
+SerPerms "$CHMOD"		"$SUDO_CHOWN"	/mnt/freedata/People		750 dimanne:photos_watchers
+SerPerms "$CHMOD_R"		"$SUDO_CHOWN_R"	/mnt/freedata/People/Photos	750 dimanne:photos_watchers
+
+SerPerms "$SUDO_CHMOD"		"$SUDO_CHOWN"	/mnt/backup2			700 yulya:yulya
