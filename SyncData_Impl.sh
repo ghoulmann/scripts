@@ -10,12 +10,14 @@ MYHOME_PATH="/home/Void"
 # without this iption if time of dst does not coincide with time of src rsync will perform transfer
 RSYNC_OPTIONS="--times --recursive          --verbose --human-readable --progress --itemize-changes --stats"
 
+function RunVerbosely() { echo "$@" ; "$@" ; }
+
 function DoRsync
    {    
       echo; echo; echo; echo;
       echo "RSYNC $1   ======>   $2"
       echo; 
-      rsync ${RSYNC_OPTIONS} $1 $2
+      RunVerbosely rsync ${RSYNC_OPTIONS} $1 $2
       echo "========================================================================================";
    
    }
@@ -25,7 +27,7 @@ function DoRsyncDelete
       echo; echo; echo; echo;
       echo "RSYNC $1   ======>   $2"
       echo; 
-      rsync ${RSYNC_OPTIONS} --delete $1 $2
+      RunVerbosely rsync ${RSYNC_OPTIONS} --delete $1 $2
       echo "========================================================================================";
    
    }
