@@ -1,0 +1,15 @@
+alias sysupgrade='sudo aptitude update; sudo aptitude full-upgrade'
+alias cdem='cd /home/Void/devel/EventManager/'
+
+alias umountpr='fusermount -u /home/Void/pr_dec'
+alias mountpr='encfs /mnt/media/VideoLibrary/\!\!\!/\!\!\!Enc/ /home/Void/pr_dec'
+
+alias umountya='sudo umount /home/Void/YandexDisk'
+alias  mountya='sudo mount -t davfs -o uid=dimanne https://webdav.yandex.ru /home/Void/YandexDisk'
+
+alias umountyad='fusermount -u /home/Void/YandexDiskDecrypted'
+alias  mountyad='encfs /home/Void/YandexDisk/something_interesting_here/ /home/Void/YandexDiskDecrypted'
+
+alias incochrome='chromium-browser --user-data-dir=~/.config/chromium2 --incognito --proxy-server="socks5://localhost:9050"'
+
+alias SafeRun='/home/Void/sys/SafeRun.sh'
