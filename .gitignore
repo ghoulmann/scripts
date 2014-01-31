@@ -1,2 +1,4 @@
 *.log
 *-typescript.txt
+firewall/firewall
+*.pro.user

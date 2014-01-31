@@ -4,6 +4,7 @@
 
 #include "GenericParser.h"
 #include "EvManGlobal.h"
+#include "TProtocolsInfoTable.h"
 
 int main(int argc, char **argv)
    {
@@ -21,7 +22,14 @@ int main(int argc, char **argv)
             Stream = std::unique_ptr<QTextStream>(new QTextStream(stdin, QIODevice::ReadOnly));
          }
 
-      TStrRows ProtocolInfoTable = Parse(*Stream, 3);
+      const TStrRows &StrProtocolInfoTable = Parse(*Stream, 3);
+      TProtocolsInfoTable ProtocolsInfoTable;
+      StrProtocolInfoTable >> ProtocolsInfoTable;
+      Out(qDebug(), ProtocolsInfoTable);
+
+
+      const TStrRows &StrRulesInfoTable = Parse(*Stream, 5);
+
 
       return 0;
    }

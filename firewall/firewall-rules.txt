@@ -4,7 +4,7 @@
 
 #service name				listen (incoming) port		established (outcoming) port	
 
-xmpp client, jabber client	;	8010(tcp)		;	5222(tcp), 5223(tcp), 5269(tcp), 5280(tcp), 5281(tcp), 5298(tcp,udp)
+xmpp client, jabber client	;	8010(tcp)		;	5222(tcp), 5223(tcp), 5269(tcp), 5280(tcp), 5281(tcp), 5298(tcp udp)
 http client			;				;	80(tcp)
 https client			;				;	443(tcp)
 ssh client			;				;	22(tcp)
