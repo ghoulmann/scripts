@@ -26,7 +26,7 @@ BEGIN
 
 jabber client			;			;	jabber.mipt.ru	;	psi-plus				;	*
 http client, https client	;			;	*		;	chromium-browser, chromium-browse	;	*
-http server (test)		;	L, -		;	*		;	*					;	*
+http server (test)		;	*(L -)		;	*		;	*					;	*
 ssh client, ssh server		;	*		;	*		;	sshd					;	*
 nfs client			;			;	server		;	*					;	*
 steam client			;	*		;	*		;	*					;	*
