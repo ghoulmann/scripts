@@ -107,7 +107,7 @@ void operator>>(const TStrFields &StrFields, TPortsInfo &PortsInfo)
 
 void operator>>(const TStrColumns &StrColumns, TProtocolInfo &ProtocolInfo)
    {
-      ASSERT_X(StrColumns.size() == 3, "StrColumns:" << StrColumns << "has" << StrColumns.size() << ", but must 3!")
+      ASSERT_X(StrColumns.size() == 3, "StrColumns:" << StrColumns << "has" << StrColumns.size() << ", but must have 3!")
       StrColumns[0] >> ProtocolInfo.ProtocolNames;
       StrColumns[1] >> ProtocolInfo.IncomingPorts;
       StrColumns[2] >> ProtocolInfo.OutcomingPorts;

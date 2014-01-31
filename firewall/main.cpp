@@ -5,6 +5,7 @@
 #include "GenericParser.h"
 #include "EvManGlobal.h"
 #include "TProtocolsInfoTable.h"
+#include "TMetaRuleInfos.h"
 
 int main(int argc, char **argv)
    {
@@ -29,7 +30,10 @@ int main(int argc, char **argv)
 
 
       const TStrRows &StrRulesInfoTable = Parse(*Stream, 5);
+      TMetaRuleInfos MetaRuleInfos;
+      StrRulesInfoTable >> MetaRuleInfos;
 
+      Out(qDebug(), MetaRuleInfos);
 
       return 0;
    }

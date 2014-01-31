@@ -6,12 +6,14 @@ MOC_DIR = .moc
 HEADERS += EvManGlobal.h \
            GenericParser.h \
            TProtocolsInfoTable.h \
-           TRulesInfoTable.h
+           TMetaRuleInfos.h \
+           TRule.h
 
 SOURCES += EvManGlobal.cpp \
            main.cpp \
            GenericParser.cpp \
            TProtocolsInfoTable.cpp \
-           TRulesInfoTable.cpp
+           TMetaRuleInfos.cpp \
+           TRule.cpp
 
 QMAKE_CXXFLAGS += -std=c++11
