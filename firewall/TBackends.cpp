@@ -108,10 +108,10 @@ QStringList GenerateCommands_Ip(const TRule &Rule)
       return Result;
    }
 
-QStringList GenerateCommands(GenerateCommand FPtr, const TRules &Rules)
+QStringList GenerateCommands(GenerateCommand GeneratorPtr, const TRules &Rules)
    {
       QStringList Result;
       for(const TRule &Rule: Rules)
-         Result << FPtr(Rule);
+         Result << GeneratorPtr(Rule);
       return Result;
    }

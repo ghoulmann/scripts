@@ -1,5 +1,6 @@
 #include <memory>
 
+#include <iostream>
 #include <QFile>
 
 #include "GenericParser.h"
@@ -60,22 +61,22 @@ int main(int argc, char **argv)
       const TStrRows &StrProtocolInfoTable = Parse(*Stream, 3);
       TProtocolsInfoTable ProtocolsInfoTable;
       StrProtocolInfoTable >> ProtocolsInfoTable;
-      Out(qDebug(), ProtocolsInfoTable);
+      //Out(qDebug(), ProtocolsInfoTable);
 
 
       const TStrRows &StrRulesInfoTable = Parse(*Stream, 5);
       TMetaRuleInfos MetaRuleInfos;
       StrRulesInfoTable >> MetaRuleInfos;
 
-      Out(qDebug(), MetaRuleInfos);
+      //Out(qDebug(), MetaRuleInfos);
 
       const TRules &Rules = GenerateRules(ProtocolsInfoTable, MetaRuleInfos);
-      qDebug() << Rules;
+      //qDebug() << Rules;
 
       const QStringList &Commands = GenerateCommands(GenerateCommands_Ip, Rules);
 
       for(const QString &Command: Commands)
-         qDebug() << Command;
+         std::cout << Command.toStdString() << std::endl;
 
       return 0;
    }
