@@ -13,6 +13,7 @@ nfs client			;				;	1025(tcp)
 nfs server			;	1025(tcp)		;
 skype				;				;	23399(tcp)
 steam client			;	27015(tcp)		;	27000-27030(udp), 27014-27050(tcp), 3478(udp), 4379(udp), 4380(udp)
+http server (test)		;	80(tcp)			;
 
 END
 
@@ -24,9 +25,9 @@ BEGIN
 
 #service name			incoming (from servers)	outcoming (to servers)		process name					user name
 
-jabber client			;			;	jabber.mipt.ru	;	psi-plus				;	*
+jabber client			;	*		;	jabber.mipt.ru	;	psi-plus				;	*
 http client, https client	;			;	*		;	chromium-browser, chromium-browse	;	*
-http server (test)		; bad.guy(L), *(L -)	;	*		;	*					;	*
+http server (test)		; bad.guy, *(-)		;	*		;	*					;	*
 ssh client, ssh server		;	*		;	*		;	sshd					;	*
 nfs client			;			;	server		;	*					;	*
 steam client			;	*		;	*		;	*					;	*

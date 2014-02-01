@@ -7,13 +7,15 @@ HEADERS += EvManGlobal.h \
            GenericParser.h \
            TProtocolsInfoTable.h \
            TMetaRuleInfos.h \
-           TRule.h
+           TRule.h \
+           TBackends.h
 
 SOURCES += EvManGlobal.cpp \
            main.cpp \
            GenericParser.cpp \
            TProtocolsInfoTable.cpp \
            TMetaRuleInfos.cpp \
-           TRule.cpp
+           TRule.cpp \
+           TBackends.cpp
 
 QMAKE_CXXFLAGS += -std=c++11
