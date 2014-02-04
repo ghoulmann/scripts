@@ -1,6 +1,8 @@
 #include "GenericParser.h"
 #include "EvManGlobal.h"
 
+#include <QRegularExpression>
+
 const QString BEGIN = "BEGIN";
 const QString END = "END";
 const QString COLUMN_SEPARATOR = ";";
@@ -51,8 +53,8 @@ TStrRows Parse(QTextStream &TextStream, const int NumberOfColumns)
                   TStrFields Fields = Column.split(FIELD_SEPARATOR);
                   for(QString &Field: Fields)
                      {
-                        Field.remove(QRegExp("^[ \t]*"));
-                        Field.remove(QRegExp("[ \t]*$"));
+                        Field.remove(QRegularExpression("^[ \t]*"));
+                        Field.remove(QRegularExpression("[ \t]*$"));
                      }
                   StrColumns << Fields;
                }

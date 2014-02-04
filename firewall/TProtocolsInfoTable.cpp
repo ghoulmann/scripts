@@ -6,6 +6,8 @@
 
 void operator>>(const TStrFields &StrFields, TProtocolNames &ProtocolNames)
    {
+      ASSERT_X_OP(StrFields.size(), >=, 1, "Specify at least one protocol name!");
+      ASSERT_X_OP(StrFields[0].size(), >, 0, "Specify at least one protocol name!");
       ProtocolNames = StrFields;
    }
 
@@ -99,15 +101,15 @@ void operator>>(const TStrFields &StrFields, TPortsInfo &PortsInfo)
             ParsePorts(Str, FirstPort, SecondPort);
 
             if(HasTcp)
-               PortsInfo[TPortType::TCP] = GeneratePortsRange(FirstPort, SecondPort);
+               PortsInfo[TPortType::TCP].unite(GeneratePortsRange(FirstPort, SecondPort));
             if(HasUdp)
-               PortsInfo[TPortType::UDP] = GeneratePortsRange(FirstPort, SecondPort);
+               PortsInfo[TPortType::UDP].unite(GeneratePortsRange(FirstPort, SecondPort));
          }
    }
 
 void operator>>(const TStrColumns &StrColumns, TProtocolInfo &ProtocolInfo)
    {
-      ASSERT_X(StrColumns.size() == 3, "StrColumns:" << StrColumns << "has" << StrColumns.size() << ", but must 3!")
+      ASSERT_X(StrColumns.size() == 3, "StrColumns:" << StrColumns << "has" << StrColumns.size() << ", but must have 3!")
       StrColumns[0] >> ProtocolInfo.ProtocolNames;
       StrColumns[1] >> ProtocolInfo.IncomingPorts;
       StrColumns[2] >> ProtocolInfo.OutcomingPorts;
