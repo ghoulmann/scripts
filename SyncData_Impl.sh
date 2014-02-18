@@ -15,7 +15,7 @@ set -e
 # =================================================== home & ssd ====================================================
 # ===================================================================================================================
 DoRsync ${MYHOME_PATH}/devel/ ${FREEDATA_PATH}/home/Void/devel/
-DoRsync ${MYHOME_PATH}/Yandex/ ${FREEDATA_PATH}/home/Void/Yandex/
+DoRsyncDelete ${MYHOME_PATH}/Yandex/ ${FREEDATA_PATH}/home/Void/Yandex/
 
 
 # ===================================================================================================================
@@ -30,5 +30,6 @@ DoRsync ${FREEDATA_PATH}/Funny\&Interesting/ /mnt/backup1/Funny\&Interesting/ # 
 # ===================================================== media =======================================================
 # ===================================================================================================================
 # Important part of video library   disk => backup1
+#DoRsyncDelete ${RAID_PATH}/VideoLibrary/\!\!\!/             /mnt/backup1/VideoLibrary/\!\!\!/
 DoRsync ${RAID_PATH}/VideoLibrary/\!\!\!/             /mnt/backup1/VideoLibrary/\!\!\!/
 DoRsync ${RAID_PATH}/VideoLibrary/\!EducationalFilms/ /mnt/backup1/VideoLibrary/\!EducationalFilms/
