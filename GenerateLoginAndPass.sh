@@ -21,11 +21,13 @@ function GetRandomChars() {
 
 echo
 
-printf "UserName: "
-GetRandomChars 6
+USERNAME_LENTH="$((2 + $RANDOM % 9))" # [2; 2+8]
+printf "Generating UserName ($USERNAME_LENTH chars length): "
+GetRandomChars $USERNAME_LENTH
 
-printf "Password: "
-GetRandomChars 30
+PASSWORD_LENGTH="$((12 + $RANDOM % 19))" # [12; 12+18]
+printf "Generating Password ($PASSWORD_LENGTH chars length): "
+GetRandomChars $PASSWORD_LENGTH
 
 echo
 

@@ -26,8 +26,6 @@ DoRsync "$THIS_DIR/$NEW_PRON_ARCH_NAME" "${YAD_PATH}/pron2/"
 RunVerbosely rm -rf "$THIS_DIR/$NEW_PRON_ARCH_NAME"
 
 
-exit 0;
-
 RunVerbosely sudo cp -r /etc/.git /home/Void/sys/etc
 RunVerbosely sudo chown -R dimanne /home/Void/sys/etc
 DoRsync /home/Void/sys/etc/ ${YAD_PATH}/etc/
