@@ -76,11 +76,11 @@ alias sysupgrade='sudo aptitude update; sudo aptitude full-upgrade'
 THIS_IS_END_OF_HEREDOC
 )
 
+
 #===================================================================================================================================================
 
-YA=$( cat <<"THIS_IS_END_OF_HEREDOC"
+YA_RUN_BINARIES=$( cat <<"THIS_IS_END_OF_HEREDOC"
 # ==================================== YA ====================================
-alias $YADEVEL
 
 # ================ spider related ================
 alias         runfut='$YADEVEL/build-fut/yweb/robot/fut/fut'
@@ -116,8 +116,15 @@ alias      runfeed='$YADEVEL/build-kiwi/yweb/robot/kiwi/kwfeed/kwfeed'
 alias feedmetadata='$YADEVEL/build-kiwi/yweb/robot/kiwi/kwfeed/kwfeed -d tuple -c  dhcp172-103-red.yandex.net gene -k egg -t write < $YADEVEL/env-kiwi/egg.pb.txt; $YADEVEL/build-kiwi/yweb/robot/kiwi/kwfeed/kwfeed -d tuple -c dhcp172-103-red.yandex.net  gene -k points write < $YADEVEL/env-kiwi/points.pb.txt; $YADEVEL/build-kiwi/yweb/robot/kiwi/kwfeed/kwfeed -d tuple -c dhcp172-103-red.yandex.net  gene  -k triggers write -t <  $YADEVEL/env-kiwi/triggers.pb.txt'
 alias runkwcalc_metastub='$YADEVEL/build-kiwi/yweb/robot/kiwi/kwcalc/server/kwcalc -H $YADEVEL/env-kwcalc/  -Ll -w  $YADEVEL/build-kiwi/yweb/robot/kiwi/kwcalc/worker/kwcalcworker -t 0 --meta-stub-file $YADEVEL/env-kwcalc/metadata.pb.txt -j 2 --restart-task-cnt 100'
 
-alias            ek='$YADEVEL/scripts/ExecuteOnAllKiwis.sh'
+THIS_IS_END_OF_HEREDOC
 
+
+#===================================================================================================================================================
+
+YA=$( cat <<"THIS_IS_END_OF_HEREDOC"
+# ==================================== YA ====================================
+
+alias            ek='$YADEVEL/scripts/ExecuteOnAllKiwis.sh'
 
 # ================ common ================
 
@@ -147,8 +154,11 @@ function Usage() {
 
 if [ "$1" = "loon" ]
 then
+   MYDEVEL="/home/dimanne/devel"
+   MYDEVEL="/home/dimanne/mydevel"
    eval "echo \"$COMMON_OTHER_ALIASES\""
    eval "echo \"$COMMON_GIT_ALIASES\""
+   eval "echo \"$YA_RUN_BINARIES\""
 
 
 
@@ -159,6 +169,7 @@ then
    eval "echo \"$COMMON_OTHER_ALIASES\""
    eval "echo \"$COMMON_GIT_ALIASES\""
    eval "echo \"$SYS_MANAGEMENT\""
+   eval "echo \"$YA_RUN_BINARIES\""
    eval "echo \"$YA\""
 
 
@@ -170,6 +181,7 @@ then
    eval "echo \"$COMMON_OTHER_ALIASES\""
    eval "echo \"$COMMON_GIT_ALIASES\""
    eval "echo \"$SYS_MANAGEMENT\""
+   eval "echo \"$YA_RUN_BINARIES\""
    eval "echo \"$YA\""
    eval "echo \"$IMPEDANCE_ALIASES\""
 
