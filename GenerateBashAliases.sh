@@ -1,5 +1,31 @@
 #!/bin/bash
 
+# Need to escape "
+#            and $
+#            and \
+
+#===================================================================================================================================================
+
+COLOURIZED_PROMPT=$( cat <<THIS_IS_END_OF_HEREDOC
+# Colorized prompt
+if [ \$UID != 0  ] ; then
+        PS1=\"\[\e[32;1m\]\u@\[\e[31;1m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\\\\\\\\$ \"
+else
+        PS1=\"\[\e[31;1m\]\u@\[\e[31;1m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\\\\\\\\$ \"
+fi
+THIS_IS_END_OF_HEREDOC
+)
+
+#===================================================================================================================================================
+
+COLOURIZED_GREP=$( cat <<THIS_IS_END_OF_HEREDOC
+# Colorized grep
+export GREP_OPTIONS=\"--color=auto\"
+export GREP_COLOR=\"1;32\"
+THIS_IS_END_OF_HEREDOC
+)
+
+
 #===================================================================================================================================================
 
 COMMON_SYS_ALIASES=$( cat <<THIS_IS_END_OF_HEREDOC
@@ -155,7 +181,9 @@ function Usage() {
 if [ "$1" = "loon" ]
 then
    YADEVEL="/home/dimanne/devel"
-   MYDEVEL="/home/dimanne/mydevel"
+   MYDEVEL="/home/dimanne/mydevel"   
+   eval "echo \"$COLOURIZED_PROMPT\""
+   eval "echo \"$COLOURIZED_GREP\""   
    eval "echo \"$COMMON_OTHER_ALIASES\""
    eval "echo \"$COMMON_GIT_ALIASES\""
    eval "echo \"$YA_RUN_BINARIES\""
