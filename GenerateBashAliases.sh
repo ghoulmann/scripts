@@ -154,7 +154,7 @@ function Usage() {
 
 if [ "$1" = "loon" ]
 then
-   MYDEVEL="/home/dimanne/devel"
+   YADEVEL="/home/dimanne/devel"
    MYDEVEL="/home/dimanne/mydevel"
    eval "echo \"$COMMON_OTHER_ALIASES\""
    eval "echo \"$COMMON_GIT_ALIASES\""
