@@ -117,7 +117,7 @@ alias feedmetadata='$YADEVEL/build-kiwi/yweb/robot/kiwi/kwfeed/kwfeed -d tuple -
 alias runkwcalc_metastub='$YADEVEL/build-kiwi/yweb/robot/kiwi/kwcalc/server/kwcalc -H $YADEVEL/env-kwcalc/  -Ll -w  $YADEVEL/build-kiwi/yweb/robot/kiwi/kwcalc/worker/kwcalcworker -t 0 --meta-stub-file $YADEVEL/env-kwcalc/metadata.pb.txt -j 2 --restart-task-cnt 100'
 
 THIS_IS_END_OF_HEREDOC
-
+)
 
 #===================================================================================================================================================
 
