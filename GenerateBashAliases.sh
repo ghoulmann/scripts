@@ -103,6 +103,31 @@ THIS_IS_END_OF_HEREDOC
 )
 
 
+
+#===================================================================================================================================================
+
+
+YA_NOTE_SPIDERLOOKUPS=$( cat <<"THIS_IS_END_OF_HEREDOC"
+# ==================================== YA SPIDERLOOKUPs ====================================
+alias devzoraspiderlookup='ssh loon ssh dev-zora-00 spiderlookup'
+alias devspiderspiderlookup='ssh loon ssh dev-spider-ru-00 spiderlookup'
+alias zoraspiderlookup='ssh loon ssh zora2-00 spiderlookup'
+alias piderspiderlookup='ssh loon ssh spider-ru-00 spiderlookup'
+
+THIS_IS_END_OF_HEREDOC
+)
+
+YA_LOON_SPIDERLOOKUPS=$( cat <<"THIS_IS_END_OF_HEREDOC"
+# ==================================== YA SPIDERLOOKUPs ====================================
+alias devzoraspiderlookup='ssh dev-zora-00 spiderlookup'
+alias devspiderspiderlookup='ssh dev-spider-ru-00 spiderlookup'
+alias zoraspiderlookup='ssh zora2-00 spiderlookup'
+alias piderspiderlookup='ssh spider-ru-00 spiderlookup'
+
+THIS_IS_END_OF_HEREDOC
+)
+
+
 #===================================================================================================================================================
 
 YA_RUN_BINARIES=$( cat <<"THIS_IS_END_OF_HEREDOC"
@@ -187,6 +212,7 @@ then
    eval "echo \"$COMMON_OTHER_ALIASES\""
    eval "echo \"$COMMON_GIT_ALIASES\""
    eval "echo \"$YA_RUN_BINARIES\""
+   eval "echo \"$YA_LOON_SPIDERLOOKUPS\""
 
 
 
@@ -199,6 +225,7 @@ then
    eval "echo \"$SYS_MANAGEMENT\""
    eval "echo \"$YA_RUN_BINARIES\""
    eval "echo \"$YA\""
+   eval "echo \"$YA_NOTE_SPIDERLOOKUPS\""
 
 
 
@@ -212,6 +239,7 @@ then
    eval "echo \"$YA_RUN_BINARIES\""
    eval "echo \"$YA\""
    eval "echo \"$IMPEDANCE_ALIASES\""
+   eval "echo \"$YA_NOTE_SPIDERLOOKUPS\""
 
 
 
