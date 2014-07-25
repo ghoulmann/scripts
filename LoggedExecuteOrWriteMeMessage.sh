@@ -18,12 +18,14 @@ cd $THIS_DIR
 script -ec "$SCRIPT_NAME $2 $3 $4 $5 $6 $7 $8 $9" $TYPESCRIPT_PATH
 EXIT_CODE=$?
 
+echo "`locale`" >> $LOG_PATH
+
 if [ "$EXIT_CODE" -eq "0" ]
 then
-   echo -e "Successfully finished at `date`, exitcode $EXIT_CODE\n" >> $LOG_PATH
+   printf "Successfully finished at `date`, exitcode $EXIT_CODE\n\n" >> $LOG_PATH
    exit
 fi
 
-echo "subj." | mail --subject "Exit code of $SCRIPT_NAME is $EXIT_CODE" -A $TYPESCRIPT_PATH dimanne@ya.ru
-echo "subj." | mail --subject "Exit code of $SCRIPT_NAME is $EXIT_CODE" dimanne@ya.ru
-echo -e "NOT successfully finished at `date`, exitcode $EXIT_CODE\n" >> $LOG_PATH
+echo "subj." | mail -subject "Exit code of $SCRIPT_NAME is $EXIT_CODE" -A $TYPESCRIPT_PATH dimanne@ya.ru
+echo "subj." | mail -subject "Exit code of $SCRIPT_NAME is $EXIT_CODE" dimanne@ya.ru
+printf "NOT successfully finished at `date`, exitcode $EXIT_CODE\n\n" >> $LOG_PATH

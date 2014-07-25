@@ -11,8 +11,10 @@ set -e
 
 RSYNC_OPTIONS="--size-only --recursive  --verbose --human-readable --progress --itemize-changes --stats"
 
+# 1) ======================== BestMusic ========================
 DoRsync "/mnt/freedata/BestMusic/" "$YA_PATH/BestMusic/"
 
+# 2) ======================== Pr ========================
 OLD_PRON_ARCH_NAME="enc_pron.old.tar.gz"
 NEW_PRON_ARCH_NAME="enc_pron.new.tar.gz"
 RunVerbosely rm -rf "$THIS_DIR/$NEW_PRON_ARCH_NAME"
@@ -26,6 +28,7 @@ DoRsync "$THIS_DIR/$NEW_PRON_ARCH_NAME" "${YAD_PATH}/pron2/"
 RunVerbosely rm -rf "$THIS_DIR/$NEW_PRON_ARCH_NAME"
 
 
+# 3) ======================== etc ========================
 RunVerbosely sudo cp -r /etc/.git /home/Void/sys/etc
 RunVerbosely sudo chown -R dimanne /home/Void/sys/etc
 DoRsync /home/Void/sys/etc/ ${YAD_PATH}/etc/
