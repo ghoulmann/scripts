@@ -127,6 +127,16 @@ alias piderspiderlookup='ssh spider-ru-00 spiderlookup'
 THIS_IS_END_OF_HEREDOC
 )
 
+#===================================================================================================================================================
+
+
+YA_LOON_BINARIES=$( cat <<"THIS_IS_END_OF_HEREDOC"
+# ==================================== YA LOON BINARIES ====================================
+alias loonfeed='ssh loon.search.yandex.net /home/dimanne/devel/build-kiwi/yweb/robot/kiwi/kwfeed/kwfeed'
+
+THIS_IS_END_OF_HEREDOC
+)
+
 
 #===================================================================================================================================================
 
@@ -226,6 +236,7 @@ then
    eval "echo \"$YA_RUN_BINARIES\""
    eval "echo \"$YA\""
    eval "echo \"$YA_NOTE_SPIDERLOOKUPS\""
+   eval "echo \"$YA_LOON_BINARIES\""
 
 
 
@@ -240,6 +251,7 @@ then
    eval "echo \"$YA\""
    eval "echo \"$IMPEDANCE_ALIASES\""
    eval "echo \"$YA_NOTE_SPIDERLOOKUPS\""
+   eval "echo \"$YA_LOON_BINARIES\""
 
 
 
