@@ -163,6 +163,9 @@ alias           yr2='$YADEVEL/arc-from-346k-2/yweb/scripts/yr'
 alias            ez='$YADEVEL/scripts/ExecuteOnAllZoras.sh'
 alias            es='$YADEVEL/scripts/ExecuteOnAllSpiders.sh'
 
+alias  downloadsbresources='$YADEVEL/arc-from-346k/yweb/robot/spider/scripts/DownloadSBResources.sh'
+alias downloadsbresources2='$YADEVEL/arc-from-346k-2/yweb/robot/spider/scripts/DownloadSBResources.sh'
+
 
 # ================ kiwi related ================
 alias     rungene='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwgene     && ./kwgene -L --home=$YADEVEL/kiwi-home/ -d tuple  --dqaddr=224.0.0.1'
