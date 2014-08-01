@@ -165,16 +165,19 @@ alias            es='$YADEVEL/scripts/ExecuteOnAllSpiders.sh'
 
 
 # ================ kiwi related ================
-alias   rungene='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwgene && ./kwgene -L -d tuple  --dqaddr=224.0.0.1'
-alias  baregene='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwgene && ./kwgene'
-alias   runmeta='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwmeta && ./kwmeta -L --home=$YADEVEL/build-kiwi/yweb/robot/kiwi/kwmeta --server-host=95.108.173.178-red.dhcp.yndx.net'
-alias  baremeta='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwmeta && ./kwmeta'
-alias   runnest='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwnest && ./kwnest -L --domain=tuple --segments-num 2 --home=$YADEVEL/build-kiwi/yweb/robot/kiwi/kwnest/ --dqaddr=224.0.0.1'
-alias  barenest='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwnest && ./kwnest'
-alias    runhen='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwhen  && ./kwhen  -L -d tuple --dqaddr=224.0.0.1 -s 31409'
-alias   barehen='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwhen  && ./kwhen'
+alias     rungene='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwgene     && ./kwgene -L --home=$YADEVEL/kiwi-home/ -d tuple  --dqaddr=224.0.0.1'
+alias    baregene='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwgene     && ./kwgene'
+alias     runmeta='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwmeta     && ./kwmeta -L --home=$YADEVEL/kiwi-home/ --server-host=localhost'
+alias    baremeta='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwmeta     && ./kwmeta'
+alias     runnest='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwnest     && ./kwnest -L --home=$YADEVEL/kiwi-home/ --domain=tuple --segments-num 2 --dqaddr=224.0.0.1'
+alias    barenest='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwnest     && ./kwnest'
+alias      runhen='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwhen      && ./kwhen  -L --home=$YADEVEL/kiwi-home/ -d tuple --dqaddr=224.0.0.1 -s 31409'
+alias     barehen='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwhen      && ./kwhen'
+alias  runtracker='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwtracker/ && ./kwtracker'
+alias   runloader='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwloader/  && ./kwloader --home=$YADEVEL/kiwi-home/ -l --announce=http://localhost'
+alias  bareloader='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwloader/  && ./kwloader'
 alias      runfeed='$YADEVEL/build-kiwi/yweb/robot/kiwi/kwfeed/kwfeed'
-alias feedmetadata='$YADEVEL/build-kiwi/yweb/robot/kiwi/kwfeed/kwfeed -d tuple -c  95.108.173.178-red.dhcp.yndx.net gene -k egg -t write < $YADEVEL/env-kiwi/egg.pb.txt; $YADEVEL/build-kiwi/yweb/robot/kiwi/kwfeed/kwfeed -d tuple -c 95.108.173.178-red.dhcp.yndx.net  gene -k points -t write < $YADEVEL/env-kiwi/points.pb.txt; $YADEVEL/build-kiwi/yweb/robot/kiwi/kwfeed/kwfeed -d tuple -c 95.108.173.178-red.dhcp.yndx.net  gene  -k triggers write -t <  $YADEVEL/env-kiwi/triggers.pb.txt'
+alias feedmetadata='$YADEVEL/build-kiwi/yweb/robot/kiwi/kwfeed/kwfeed -d tuple -c  localhost gene -k egg -t write < $YADEVEL/env-kiwi/egg.pb.txt; $YADEVEL/build-kiwi/yweb/robot/kiwi/kwfeed/kwfeed -d tuple -c localhost  gene -k points -t write < $YADEVEL/env-kiwi/points.pb.txt; $YADEVEL/build-kiwi/yweb/robot/kiwi/kwfeed/kwfeed -d tuple -c localhost  gene  -k triggers write -t <  $YADEVEL/env-kiwi/triggers.pb.txt'
 alias runkwcalc_metastub='$YADEVEL/build-kiwi/yweb/robot/kiwi/kwcalc/server/kwcalc -H $YADEVEL/env-kwcalc/  -Ll -w  $YADEVEL/build-kiwi/yweb/robot/kiwi/kwcalc/worker/kwcalcworker -t 0 --meta-stub-file $YADEVEL/env-kwcalc/metadata.pb.txt -j 2 --restart-task-cnt 100'
 
 THIS_IS_END_OF_HEREDOC
