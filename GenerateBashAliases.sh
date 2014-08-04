@@ -170,7 +170,7 @@ alias downloadsbresources2='$YADEVEL/arc-from-346k-2/yweb/robot/spider/scripts/D
 # ================ kiwi related ================
 alias     rungene='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwgene     && ./kwgene -L --home=$YADEVEL/kiwi-home/ -d tuple  --dqaddr=224.0.0.1'
 alias    baregene='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwgene     && ./kwgene'
-alias     runmeta='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwmeta     && ./kwmeta -L --home=$YADEVEL/kiwi-home/ --server-host=localhost'
+alias     runmeta='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwmeta     && ./kwmeta -L --home=$YADEVEL/kiwi-home/ --server-host=localhost --fqdn=localhost'
 alias    baremeta='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwmeta     && ./kwmeta'
 alias     runnest='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwnest     && ./kwnest -L --home=$YADEVEL/kiwi-home/ --domain=tuple --segments-num 2 --dqaddr=224.0.0.1'
 alias    barenest='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwnest     && ./kwnest'
