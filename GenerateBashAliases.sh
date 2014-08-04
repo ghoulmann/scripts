@@ -168,21 +168,22 @@ alias downloadsbresources2='$YADEVEL/arc-from-346k-2/yweb/robot/spider/scripts/D
 
 
 # ================ kiwi related ================
-alias     rungene='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwgene     && ./kwgene -L --home=$YADEVEL/kiwi-home/ -d tuple  --dqaddr=224.0.0.1'
-alias    baregene='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwgene     && ./kwgene'
-alias     runmeta='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwmeta     && ./kwmeta -L --home=$YADEVEL/kiwi-home/ --server-host=localhost --fqdn=localhost'
-alias    baremeta='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwmeta     && ./kwmeta'
-alias     runnest='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwnest     && ./kwnest -L --home=$YADEVEL/kiwi-home/ --domain=tuple --segments-num 2 --dqaddr=224.0.0.1'
-alias    barenest='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwnest     && ./kwnest'
-alias      runhen='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwhen      && ./kwhen  -L --home=$YADEVEL/kiwi-home/ -d tuple --dqaddr=224.0.0.1 -s 31409'
-alias     barehen='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwhen      && ./kwhen'
-alias  runtracker='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwtracker/ && ./kwtracker'
-alias   runloader='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwloader/  && ./kwloader --home=$YADEVEL/kiwi-home/ -l --announce=http://localhost'
-alias  bareloader='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwloader/  && ./kwloader'
+alias     rungene='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwgene         && ./kwgene -L --home=$YADEVEL/kiwi-home/ -d tuple  --dqaddr=224.0.0.1'
+alias    baregene='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwgene         && ./kwgene'
+alias     runmeta='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwmeta         && ./kwmeta -L --home=$YADEVEL/kiwi-home/ --server-host=localhost --fqdn=localhost'
+alias    baremeta='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwmeta         && ./kwmeta'
+alias     runnest='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwnest         && ./kwnest -L --home=$YADEVEL/kiwi-home/ --domain=tuple --segments-num 2 --dqaddr=224.0.0.1'
+alias    barenest='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwnest         && ./kwnest'
+alias      runhen='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwhen          && ./kwhen  -L --home=$YADEVEL/kiwi-home/ -d tuple --dqaddr=224.0.0.1 -s 31409'
+alias     barehen='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwhen          && ./kwhen'
+alias  runtracker='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwtracker/     && ./kwtracker'
+alias   runloader='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwloader/      && ./kwloader --home=$YADEVEL/kiwi-home/ -l --announce=http://localhost'
+alias  bareloader='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwloader/      && ./kwloader'
+alias   runkwcalc='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwcalc/server/ && ./kwcalc   --home=$YADEVEL/kiwi-home/udfs --verbose-main -w  $YADEVEL/build-kiwi/yweb/robot/kiwi/kwcalc/worker/kwcalcworker -j2'
+alias runkwcalc_metastub='$YADEVEL/build-kiwi/yweb/robot/kiwi/kwcalc/server/kwcalc -H $YADEVEL/env-kwcalc/  -Ll -w  $YADEVEL/build-kiwi/yweb/robot/kiwi/kwcalc/worker/kwcalcworker -t 0 --meta-stub-file $YADEVEL/env-kwcalc/metadata.pb.txt -j 2 --restart-task-cnt 100'
 alias      runfeed='$YADEVEL/build-kiwi/yweb/robot/kiwi/kwfeed/kwfeed'
 alias feedmetadata='$YADEVEL/build-kiwi/yweb/robot/kiwi/kwfeed/kwfeed -d tuple -c  localhost gene -k egg -t write < $YADEVEL/env-kiwi/egg.pb.txt; $YADEVEL/build-kiwi/yweb/robot/kiwi/kwfeed/kwfeed -d tuple -c localhost  gene -k points -t write < $YADEVEL/env-kiwi/points.pb.txt; $YADEVEL/build-kiwi/yweb/robot/kiwi/kwfeed/kwfeed -d tuple -c localhost  gene  -k triggers write -t <  $YADEVEL/env-kiwi/triggers.pb.txt'
 alias rundeployenable='ls -1 | xargs -I {} $YADEVEL/arc-from-346k/yweb/robot/kiwi/scripts/metaquery.sh -F $YADEVEL/build-kiwi/yweb/robot/kiwi/kwfeed/kwfeed -c localhost -f {}/deploy.mq:{}/enable.mq'
-alias runkwcalc_metastub='$YADEVEL/build-kiwi/yweb/robot/kiwi/kwcalc/server/kwcalc -H $YADEVEL/env-kwcalc/  -Ll -w  $YADEVEL/build-kiwi/yweb/robot/kiwi/kwcalc/worker/kwcalcworker -t 0 --meta-stub-file $YADEVEL/env-kwcalc/metadata.pb.txt -j 2 --restart-task-cnt 100'
 
 THIS_IS_END_OF_HEREDOC
 )
