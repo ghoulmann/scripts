@@ -179,12 +179,15 @@ alias      barehen='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwhen          && ./k
 alias   runtracker='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwtracker/     && ./kwtracker'
 alias    runloader='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwloader/      && ./kwloader --home=$YADEVEL/kiwi-home/ -l --announce=http://localhost'
 alias   bareloader='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwloader/      && ./kwloader'
-alias baremetaquery='$YADEVEL/arc-from-346k/yweb/robot/kiwi/scripts/metaquery.sh -F $YADEVEL/build-kiwi/yweb/robot/kiwi/kwfeed/kwfeed'
 alias   runkwcalc='cd $YADEVEL/build-kiwi/yweb/robot/kiwi/kwcalc/server/ && ./kwcalc   --home=$YADEVEL/kiwi-home/udfs --verbose-main -w  $YADEVEL/build-kiwi/yweb/robot/kiwi/kwcalc/worker/kwcalcworker -j2'
 alias runkwcalc_metastub='$YADEVEL/build-kiwi/yweb/robot/kiwi/kwcalc/server/kwcalc -H $YADEVEL/env-kwcalc/  -Ll -w  $YADEVEL/build-kiwi/yweb/robot/kiwi/kwcalc/worker/kwcalcworker -t 0 --meta-stub-file $YADEVEL/env-kwcalc/metadata.pb.txt -j 2 --restart-task-cnt 100'
 alias      runfeed='$YADEVEL/build-kiwi/yweb/robot/kiwi/kwfeed/kwfeed'
 alias feedmetadata='$YADEVEL/build-kiwi/yweb/robot/kiwi/kwfeed/kwfeed -d tuple -c  localhost gene -k egg -t write < $YADEVEL/env-kiwi/egg.pb.txt; $YADEVEL/build-kiwi/yweb/robot/kiwi/kwfeed/kwfeed -d tuple -c localhost  gene -k points -t write < $YADEVEL/env-kiwi/points.pb.txt; $YADEVEL/build-kiwi/yweb/robot/kiwi/kwfeed/kwfeed -d tuple -c localhost  gene  -k triggers write -t <  $YADEVEL/env-kiwi/triggers.pb.txt'
-alias rundeployenable='ls -1 | xargs -I {} $YADEVEL/arc-from-346k/yweb/robot/kiwi/scripts/metaquery.sh -F $YADEVEL/build-kiwi/yweb/robot/kiwi/kwfeed/kwfeed -c localhost -f {}/deploy.mq:{}/enable.mq'
+
+
+# Do not forget to specify gene host, ie: rundeployenable -c localhost, or rundeployenable -c dev-zora-00
+alias rundeployenable='ls -1 | xargs -I {} $YADEVEL/arc-from-346k/yweb/robot/kiwi/scripts/metaquery.sh -F $YADEVEL/build-kiwi/yweb/robot/kiwi/kwfeed/kwfeed -f {}/deploy.mq:{}/enable.mq'
+alias baremetaquery='$YADEVEL/arc-from-346k/yweb/robot/kiwi/scripts/metaquery.sh -F $YADEVEL/build-kiwi/yweb/robot/kiwi/kwfeed/kwfeed'
 
 THIS_IS_END_OF_HEREDOC
 )
