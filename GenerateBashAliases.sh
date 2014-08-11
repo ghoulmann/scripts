@@ -201,8 +201,8 @@ alias            ek='$YADEVEL/scripts/ExecuteOnAllKiwis.sh'
 
 # ================ common ================
 
-alias  prep='rm $YADEVEL/arc-from-346k/CMakeLists.txt.user;   echo \"ENABLE(NOLINK)\" >> $YADEVEL/arc-from-346k/local.cmake'
-alias prep2='rm $YADEVEL/arc-from-346k-2/CMakeLists.txt.user; echo \"ENABLE(NOLINK)\" >> $YADEVEL/arc-from-346k-2/local.cmake'
+alias  prep='rm $YADEVEL/arc-from-346k/CMakeLists.txt.user;   printf \"ENABLE(NOLINK)\\n SET(USE_SANDBOX_COMPILER no)\\n SET(CMAKE_CXX_COMPILER clang++)\\n SET(CMAKE_C_COMPILER clang)\\n \" >> $YADEVEL/arc-from-346k/local.cmake;'
+alias prep2='rm $YADEVEL/arc-from-346k-2/CMakeLists.txt.user; printf \"ENABLE(NOLINK)\\n SET(USE_SANDBOX_COMPILER no)\\n SET(CMAKE_CXX_COMPILER clang++)\\n SET(CMAKE_C_COMPILER clang)\\n \" >> $YADEVEL/arc-from-346k-2/local.cmake'
 alias sbrsync='$YADEVEL/scripts/sandbox_rsync.py'
 
 THIS_IS_END_OF_HEREDOC
