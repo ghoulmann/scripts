@@ -56,6 +56,8 @@ SerPerms "$CHMOD"		"$CHOWN"	/home/Void			700 dimanne:dimanne
 SerPerms "$CHMOD"		"$CHOWN"	/home/Void/Yandex		700 dimanne:dimanne
 SerPerms "$CHMOD"		"$CHOWN"	/home/Void/YandexDisk		700 dimanne:dimanne
 SerPerms "$CHMOD"		"$CHOWN"	/home/Void/YandexDiskDecrypted	700 dimanne:dimanne
+
+mkdir -p /home/Void/pron
 SerPerms "$CHMOD"		"$CHOWN"	/home/Void/pron			700 dimanne:dimanne
 SerPerms "$CHMOD"		"$CHOWN"	/mnt/backup1			700 dimanne:dimanne
 
@@ -63,4 +65,13 @@ SerPerms "$SUDO_CHMOD_R"	"$SUDO_CHOWN_R"	/mnt/freedata/People		700 dimanne:diman
 SerPerms "$CHMOD"		"$SUDO_CHOWN"	/mnt/freedata/People		750 dimanne:photos_watchers
 SerPerms "$CHMOD_R"		"$SUDO_CHOWN_R"	/mnt/freedata/People/Photos	750 dimanne:photos_watchers
 
-SerPerms "$SUDO_CHMOD"		"$SUDO_CHOWN"	/mnt/backup2			700 yulya:yulya
+SerPerms "$SUDO_CHMOD_R"	"$SUDO_CHOWN_R"	/mnt/backup2			700 yulya:yulya
+
+
+
+# Create group photos_watchers
+# sudo groupadd photos_watchers
+
+# Add yulya and dimanne to the group:
+# sudo usermod -a -G photos_watchers yulya
+# sudo usermod -a -G photos_watchers dimanne
