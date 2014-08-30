@@ -26,6 +26,6 @@ then
    exit
 fi
 
-echo "subj." | mail -subject "Exit code of $SCRIPT_NAME is $EXIT_CODE" -A $TYPESCRIPT_PATH dimanne@ya.ru
-echo "subj." | mail -subject "Exit code of $SCRIPT_NAME is $EXIT_CODE" dimanne@ya.ru
+echo "subj." | mail -s "Exit code of $SCRIPT_NAME is $EXIT_CODE" -A $TYPESCRIPT_PATH dimanne@ya.ru
+echo "subj." | mail -s "Exit code of $SCRIPT_NAME is $EXIT_CODE" dimanne@ya.ru
 printf "NOT successfully finished at `date`, exitcode $EXIT_CODE\n\n" >> $LOG_PATH
