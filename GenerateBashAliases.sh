@@ -201,8 +201,12 @@ alias            ek='$YADEVEL/scripts/ExecuteOnAllKiwis.sh'
 
 # ================ common ================
 
-alias  prep='rm $YADEVEL/arc-from-346k/CMakeLists.txt.user;   printf \"ENABLE(NOLINK)\\n SET(USE_SANDBOX_COMPILER no)\\n SET(CMAKE_CXX_COMPILER clang++)\\n SET(CMAKE_C_COMPILER clang)\\n SET_APPEND(CFLAGS -Wno-unused-const-variable)\\n SET_APPEND(CXXFLAGS -Wno-unused-const-variable)\\n SET_APPEND(CFLAGS -Wno-unused-private-field)\\n SET_APPEND(CXXFLAGS -Wno-unused-private-field)\\n\\n \" >> $YADEVEL/arc-from-346k/local.cmake;'
-alias prep2='rm $YADEVEL/arc-from-346k-2/CMakeLists.txt.user; printf \"ENABLE(NOLINK)\\n SET(USE_SANDBOX_COMPILER no)\\n SET(CMAKE_CXX_COMPILER clang++)\\n SET(CMAKE_C_COMPILER clang)\\n SET_APPEND(CFLAGS -Wno-unused-const-variable)\\n SET_APPEND(CXXFLAGS -Wno-unused-const-variable)\\n SET_APPEND(CFLAGS -Wno-unused-private-field)\\n SET_APPEND(CXXFLAGS -Wno-unused-private-field)\\n\\n \" >> $YADEVEL/arc-from-346k-2/local.cmake'
+alias  prep='rm $YADEVEL/arc-from-346k/CMakeLists.txt.user;   rm $YADEVEL/arc-from-346k/local.cmake;   printf \"ENABLE(NOLINK)\\nSET(USE_SANDBOX_COMPILER no)\\nSET(CMAKE_CXX_COMPILER clang++)\\nSET(CMAKE_C_COMPILER clang)\\nSET_APPEND(CFLAGS -Wno-unused-const-variable)\\nSET_APPEND(CXXFLAGS -Wno-unused-const-variable)\\nSET_APPEND(CFLAGS -Wno-unused-private-field)\\nSET_APPEND(CXXFLAGS -Wno-unused-private-field)\\n\\n \" >> $YADEVEL/arc-from-346k/local.cmake;'
+alias prep2='rm $YADEVEL/arc-from-346k-2/CMakeLists.txt.user; rm $YADEVEL/arc-from-346k-2/local.cmake; printf \"ENABLE(NOLINK)\\nSET(USE_SANDBOX_COMPILER no)\\nSET(CMAKE_CXX_COMPILER clang++)\\nSET(CMAKE_C_COMPILER clang)\\nSET_APPEND(CFLAGS -Wno-unused-const-variable)\\nSET_APPEND(CXXFLAGS -Wno-unused-const-variable)\\nSET_APPEND(CFLAGS -Wno-unused-private-field)\\nSET_APPEND(CXXFLAGS -Wno-unused-private-field)\\n\\n \" >> $YADEVEL/arc-from-346k-2/local.cmake'
+
+alias  prep_clang_static='rm $YADEVEL/arc-from-346k/CMakeLists.txt.user;   rm $YADEVEL/arc-from-346k/local.cmake;   printf \"ENABLE(NOLINK)\\nSET(USE_SANDBOX_COMPILER no)\\nSET(CMAKE_CXX_COMPILER /usr/share/clang/scan-build/c++-analyzer)\\nSET(CMAKE_C_COMPILER /usr/share/clang/scan-build/ccc-analyzer)\\n\\n \" >> $YADEVEL/arc-from-346k/local.cmake;'
+alias prep2_clang_static='rm $YADEVEL/arc-from-346k-2/CMakeLists.txt.user; rm $YADEVEL/arc-from-346k-2/local.cmake; printf \"ENABLE(NOLINK)\\nSET(USE_SANDBOX_COMPILER no)\\nSET(CMAKE_CXX_COMPILER /usr/share/clang/scan-build/c++-analyzer)\\nSET(CMAKE_C_COMPILER /usr/share/clang/scan-build/ccc-analyzer)\\n\\n \" >> $YADEVEL/arc-from-346k-2/local.cmake'
+
 alias sbrsync='$YADEVEL/scripts/sandbox_rsync.py'
 
 THIS_IS_END_OF_HEREDOC
