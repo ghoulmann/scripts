@@ -192,14 +192,12 @@ alias baremetaquery='$YADEVEL/arc-from-346k/yweb/robot/kiwi/scripts/metaquery.sh
 THIS_IS_END_OF_HEREDOC
 )
 
+
+
 #===================================================================================================================================================
 
-YA=$( cat <<"THIS_IS_END_OF_HEREDOC"
-# ==================================== YA ====================================
-
-alias            ek='$YADEVEL/scripts/ExecuteOnAllKiwis.sh'
-
-# ================ common ================
+PREPs=$( cat <<"THIS_IS_END_OF_HEREDOC"
+# ================ prep ================
 
 alias  prep='rm $YADEVEL/arc-from-346k/CMakeLists.txt.user;   rm $YADEVEL/arc-from-346k/local.cmake;   printf \"ENABLE(NOLINK)\\nSET(USE_SANDBOX_COMPILER no)\\nSET(CMAKE_CXX_COMPILER clang++)\\nSET(CMAKE_C_COMPILER clang)\\nSET_APPEND(CFLAGS -Wno-unused-const-variable)\\nSET_APPEND(CXXFLAGS -Wno-unused-const-variable)\\nSET_APPEND(CFLAGS -Wno-unused-private-field)\\nSET_APPEND(CXXFLAGS -Wno-unused-private-field)\\n\\n \" >> $YADEVEL/arc-from-346k/local.cmake;'
 alias prep2='rm $YADEVEL/arc-from-346k-2/CMakeLists.txt.user; rm $YADEVEL/arc-from-346k-2/local.cmake; printf \"ENABLE(NOLINK)\\nSET(USE_SANDBOX_COMPILER no)\\nSET(CMAKE_CXX_COMPILER clang++)\\nSET(CMAKE_C_COMPILER clang)\\nSET_APPEND(CFLAGS -Wno-unused-const-variable)\\nSET_APPEND(CXXFLAGS -Wno-unused-const-variable)\\nSET_APPEND(CFLAGS -Wno-unused-private-field)\\nSET_APPEND(CXXFLAGS -Wno-unused-private-field)\\n\\n \" >> $YADEVEL/arc-from-346k-2/local.cmake'
@@ -207,6 +205,16 @@ alias prep2='rm $YADEVEL/arc-from-346k-2/CMakeLists.txt.user; rm $YADEVEL/arc-fr
 alias  prep_clang_static='rm $YADEVEL/arc-from-346k/CMakeLists.txt.user;   rm $YADEVEL/arc-from-346k/local.cmake;   printf \"ENABLE(NOLINK)\\nSET(USE_SANDBOX_COMPILER no)\\nSET(CMAKE_CXX_COMPILER /usr/share/clang/scan-build/c++-analyzer)\\nSET(CMAKE_C_COMPILER /usr/share/clang/scan-build/ccc-analyzer)\\n\\n \" >> $YADEVEL/arc-from-346k/local.cmake;'
 alias prep2_clang_static='rm $YADEVEL/arc-from-346k-2/CMakeLists.txt.user; rm $YADEVEL/arc-from-346k-2/local.cmake; printf \"ENABLE(NOLINK)\\nSET(USE_SANDBOX_COMPILER no)\\nSET(CMAKE_CXX_COMPILER /usr/share/clang/scan-build/c++-analyzer)\\nSET(CMAKE_C_COMPILER /usr/share/clang/scan-build/ccc-analyzer)\\n\\n \" >> $YADEVEL/arc-from-346k-2/local.cmake'
 
+THIS_IS_END_OF_HEREDOC
+)
+
+#===================================================================================================================================================
+
+YA=$( cat <<"THIS_IS_END_OF_HEREDOC"
+# ==================================== YA ====================================
+alias            ek='$YADEVEL/scripts/ExecuteOnAllKiwis.sh'
+
+# ================ common ================
 alias sbrsync='$YADEVEL/scripts/sandbox_rsync.py'
 
 THIS_IS_END_OF_HEREDOC
@@ -239,6 +247,7 @@ then
    eval "echo \"$COMMON_GIT_ALIASES\""
    eval "echo \"$YA_RUN_BINARIES\""
    eval "echo \"$YA_LOON_SPIDERLOOKUPS\""
+   eval "echo \"$PREPs\""
 
 
 
@@ -251,6 +260,7 @@ then
    eval "echo \"$SYS_MANAGEMENT\""
    eval "echo \"$YA_RUN_BINARIES\""
    eval "echo \"$YA\""
+   eval "echo \"$PREPs\""
    eval "echo \"$YA_NOTE_SPIDERLOOKUPS\""
    eval "echo \"$YA_LOON_BINARIES\""
 
@@ -265,6 +275,7 @@ then
    eval "echo \"$SYS_MANAGEMENT\""
    eval "echo \"$YA_RUN_BINARIES\""
    eval "echo \"$YA\""
+   eval "echo \"$PREPs\""
    eval "echo \"$IMPEDANCE_ALIASES\""
    eval "echo \"$YA_NOTE_SPIDERLOOKUPS\""
    eval "echo \"$YA_LOON_BINARIES\""
