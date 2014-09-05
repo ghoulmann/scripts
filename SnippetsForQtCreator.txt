@@ -1,0 +1,21 @@
+class pimpl + copy semantics
+
+class $TClass$Private;
+class $TClass$
+   {
+   public:
+      $TClass$();
+      ~$TClass$();
+
+      $TClass$($TClass$ &&Other) noexcept;
+      $TClass$ &operator=($TClass$ &&Other) noexcept;
+
+      $TClass$(const $TClass$ &Other);
+      $TClass$ &operator=(const $TClass$ &Other);
+
+      bool operator==(const $TClass$ &Other) const;
+      bool operator!=(const $TClass$ &Other) const;
+
+   private:
+      QTPIMPL_PRIVATE($TClass$);
+   };
