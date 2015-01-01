@@ -83,7 +83,7 @@ alias  mountya='sudo mount -t davfs -o uid=dimanne https://webdav.yandex.ru /hom
 alias umountyad='fusermount -u /home/Void/YandexDiskDecrypted'
 alias  mountyad='encfs /home/Void/YandexDisk/something_interesting_here/ /home/Void/YandexDiskDecrypted'
 
-alias incochrome='chromium-browser --user-data-dir=~/.config/chromium2 --incognito --proxy-server=\"socks5://localhost:9050\"'
+alias incochrome='chromium-browser --disable-javascript --user-agent="" --user-data-dir=/home/dimanne/.config/chromium2 --incognito --proxy-server=\"socks5://localhost:9050\" && rm -rf /home/dimanne/.config/chromium2'
 
 alias SafeRun='/home/Void/sys/SafeRun.sh'
 
