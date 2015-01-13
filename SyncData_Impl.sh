@@ -15,7 +15,9 @@ set -e
 # =================================================== home & ssd ====================================================
 # ===================================================================================================================
 DoRsync ${MYHOME_PATH}/devel/ ${FREEDATA_PATH}/home/Void/devel/
+set +e # Due to root-owned certs/ directory we disable "exit on error" behaviour here
 DoRsyncDelete ${MYHOME_PATH}/Yandex/ ${FREEDATA_PATH}/home/Void/Yandex/
+set -e
 
 
 # ===================================================================================================================

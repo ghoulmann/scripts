@@ -18,8 +18,6 @@ cd $THIS_DIR
 script -ec "$SCRIPT_NAME $2 $3 $4 $5 $6 $7 $8 $9" $TYPESCRIPT_PATH
 EXIT_CODE=$?
 
-echo "`locale`" >> $LOG_PATH
-
 if [ "$EXIT_CODE" -eq "0" ]
 then
    printf "Successfully finished at `date`, exitcode $EXIT_CODE\n\n" >> $LOG_PATH

@@ -18,7 +18,7 @@ DoRsync "/mnt/freedata/BestMusic/" "$YA_PATH/BestMusic/"
 OLD_PRON_ARCH_NAME="enc_pron.old.tar.gz"
 NEW_PRON_ARCH_NAME="enc_pron.new.tar.gz"
 RunVerbosely rm -rf "$THIS_DIR/$NEW_PRON_ARCH_NAME"
-RunVerbosely tar cvzf "$THIS_DIR/$NEW_PRON_ARCH_NAME" "/mnt/media/VideoLibrary/!!!/!!!Enc"
+RunVerbosely tar cvzf "$THIS_DIR/$NEW_PRON_ARCH_NAME" "$PRON_PATH"
 if [ -f "${YAD_PATH}/pron2/$NEW_PRON_ARCH_NAME" ]; then
    set +e
    RunVerbosely mv "${YAD_PATH}/pron2/$NEW_PRON_ARCH_NAME" "${YAD_PATH}/pron2/$OLD_PRON_ARCH_NAME"
