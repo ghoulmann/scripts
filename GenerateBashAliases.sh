@@ -151,20 +151,20 @@ alias        runzora='$YADEVEL/build-zora/yweb/robot/zora/zora -c $YADEVEL/env-z
 alias      runzoracl='$YADEVEL/build-zoracl/yweb/robot/zoracl/main/zoracl fetch --source=any --server=127.0.0.1 -i '
 alias     barezoracl='$YADEVEL/build-zoracl/yweb/robot/zoracl/main/zoracl'
 alias runlogicaldocs='$YADEVEL/build-logicaldocs/yweb/robot/logicaldocs/service/logicaldocs -C $YADEVEL/env-spider/config/config.logicaldocs -e true'
-alias         deploy='$YADEVEL/arc-from-346k/yweb/robot/spider/scripts/deploy.sh'
+alias         deploy='$YADEVEL/arc/yweb/robot/spider/scripts/deploy.sh'
 
 alias            runyt='cd $YADEVEL/build-yt/bin/ && ./ytserver  --master --config $YADEVEL/env-yt/master_config.yson'
 alias runytmsgbusproxy='cd $YADEVEL/build-yt/bin/ && ./messagebus_server  --config $YADEVEL/env-yt/proxy_config.yson'
 
-alias  spiderlookup='$YADEVEL/arc-from-346k/packages/debian/spider/yandex-search-spider-common/Berkanavt/spider/scripts/spiderlookup'
-alias spiderlookup2='$YADEVEL/arc-from-346k-2/packages/debian/spider/yandex-search-spider-common/Berkanavt/spider/scripts/spiderlookup'
-alias            yr='$YADEVEL/arc-from-346k/yweb/scripts/yr'
-alias           yr2='$YADEVEL/arc-from-346k-2/yweb/scripts/yr'
+alias  spiderlookup='$YADEVEL/arc/packages/debian/spider/yandex-search-spider-common/Berkanavt/spider/scripts/spiderlookup'
+alias spiderlookup2='$YADEVEL/arc-2/packages/debian/spider/yandex-search-spider-common/Berkanavt/spider/scripts/spiderlookup'
+alias            yr='$YADEVEL/arc/yweb/scripts/yr'
+alias           yr2='$YADEVEL/arc-2/yweb/scripts/yr'
 alias            ez='$YADEVEL/scripts/ExecuteOnAllZoras.sh'
 alias            es='$YADEVEL/scripts/ExecuteOnAllSpiders.sh'
 
-alias  downloadsbresources='$YADEVEL/arc-from-346k/yweb/robot/spider/scripts/DownloadSBResources.sh'
-alias downloadsbresources2='$YADEVEL/arc-from-346k-2/yweb/robot/spider/scripts/DownloadSBResources.sh'
+alias  downloadsbresources='$YADEVEL/arc/yweb/robot/spider/scripts/DownloadSBResources.sh'
+alias downloadsbresources2='$YADEVEL/arc-2/yweb/robot/spider/scripts/DownloadSBResources.sh'
 
 
 # ================ kiwi related ================
@@ -186,8 +186,9 @@ alias feedmetadata='$YADEVEL/build-kiwi/yweb/robot/kiwi/kwfeed/kwfeed -d tuple -
 
 
 # Do not forget to specify gene host, ie: rundeployenable -c localhost, or rundeployenable -c dev-zora-00
-alias rundeployenable='ls -1 | xargs -I {} $YADEVEL/arc-from-346k/yweb/robot/kiwi/scripts/metaquery.sh -F $YADEVEL/build-kiwi/yweb/robot/kiwi/kwfeed/kwfeed -f {}/deploy.mq:{}/enable.mq'
-alias baremetaquery='$YADEVEL/arc-from-346k/yweb/robot/kiwi/scripts/metaquery.sh -F $YADEVEL/build-kiwi/yweb/robot/kiwi/kwfeed/kwfeed'
+alias rundeployenable='ls -1 | xargs -I {} $YADEVEL/arc/yweb/robot/kiwi/scripts/metaquery.sh -F $YADEVEL/build-kiwi/yweb/robot/kiwi/kwfeed/kwfeed -f {}/deploy.mq:{}/enable.mq'
+alias rundeployenablerelease='ls -1 | xargs -I {} $YADEVEL/arc/yweb/robot/kiwi/scripts/metaquery.sh -F $YADEVEL/build-kiwi/yweb/robot/kiwi/kwfeed/kwfeed -f {}/deploy.mq:{}/enable.mq:{}/release.mq'
+alias baremetaquery='$YADEVEL/arc/yweb/robot/kiwi/scripts/metaquery.sh -F $YADEVEL/build-kiwi/yweb/robot/kiwi/kwfeed/kwfeed'
 
 THIS_IS_END_OF_HEREDOC
 )
@@ -199,11 +200,11 @@ THIS_IS_END_OF_HEREDOC
 PREPs=$( cat <<"THIS_IS_END_OF_HEREDOC"
 # ================ prep ================
 
-alias  prep='rm $YADEVEL/arc-from-346k/CMakeLists.txt.user;   rm $YADEVEL/arc-from-346k/local.cmake;   printf \"ENABLE(NOLINK)\\nSET(USE_SANDBOX_COMPILER no)\\nSET(CMAKE_CXX_COMPILER clang++)\\nSET(CMAKE_C_COMPILER clang)\\nSET_APPEND(CFLAGS -Wno-unused-const-variable)\\nSET_APPEND(CXXFLAGS -Wno-unused-const-variable)\\nSET_APPEND(CFLAGS -Wno-unused-private-field)\\nSET_APPEND(CXXFLAGS -Wno-unused-private-field)\\n\\n \" >> $YADEVEL/arc-from-346k/local.cmake;'
-alias prep2='rm $YADEVEL/arc-from-346k-2/CMakeLists.txt.user; rm $YADEVEL/arc-from-346k-2/local.cmake; printf \"ENABLE(NOLINK)\\nSET(USE_SANDBOX_COMPILER no)\\nSET(CMAKE_CXX_COMPILER clang++)\\nSET(CMAKE_C_COMPILER clang)\\nSET_APPEND(CFLAGS -Wno-unused-const-variable)\\nSET_APPEND(CXXFLAGS -Wno-unused-const-variable)\\nSET_APPEND(CFLAGS -Wno-unused-private-field)\\nSET_APPEND(CXXFLAGS -Wno-unused-private-field)\\n\\n \" >> $YADEVEL/arc-from-346k-2/local.cmake'
+alias  prep='rm $YADEVEL/arc/CMakeLists.txt.user;   rm $YADEVEL/arc/local.cmake;   printf \"ENABLE(NOLINK)\\nSET(USE_SANDBOX_COMPILER no)\\nSET(CMAKE_CXX_COMPILER clang++)\\nSET(CMAKE_C_COMPILER clang)\\nSET_APPEND(CFLAGS -Wno-unused-const-variable)\\nSET_APPEND(CXXFLAGS -Wno-unused-const-variable)\\nSET_APPEND(CFLAGS -Wno-unused-private-field)\\nSET_APPEND(CXXFLAGS -Wno-unused-private-field)\\nSET_APPEND(CXXFLAGS -Wno-unknown-pragmas)\\n\\n \" >> $YADEVEL/arc/local.cmake;'
+alias prep2='rm $YADEVEL/arc-2/CMakeLists.txt.user; rm $YADEVEL/arc-2/local.cmake; printf \"ENABLE(NOLINK)\\nSET(USE_SANDBOX_COMPILER no)\\nSET(CMAKE_CXX_COMPILER clang++)\\nSET(CMAKE_C_COMPILER clang)\\nSET_APPEND(CFLAGS -Wno-unused-const-variable)\\nSET_APPEND(CXXFLAGS -Wno-unused-const-variable)\\nSET_APPEND(CFLAGS -Wno-unused-private-field)\\nSET_APPEND(CXXFLAGS -Wno-unused-private-field)\\nSET_APPEND(CXXFLAGS -Wno-unknown-pragmas)\\n\\n \" >> $YADEVEL/arc-2/local.cmake'
 
-alias  prep_clang_static='rm $YADEVEL/arc-from-346k/CMakeLists.txt.user;   rm $YADEVEL/arc-from-346k/local.cmake;   printf \"ENABLE(NOLINK)\\nSET(USE_SANDBOX_COMPILER no)\\nSET(CMAKE_CXX_COMPILER /usr/share/clang/scan-build/c++-analyzer)\\nSET(CMAKE_C_COMPILER /usr/share/clang/scan-build/ccc-analyzer)\\n\\n \" >> $YADEVEL/arc-from-346k/local.cmake;'
-alias prep2_clang_static='rm $YADEVEL/arc-from-346k-2/CMakeLists.txt.user; rm $YADEVEL/arc-from-346k-2/local.cmake; printf \"ENABLE(NOLINK)\\nSET(USE_SANDBOX_COMPILER no)\\nSET(CMAKE_CXX_COMPILER /usr/share/clang/scan-build/c++-analyzer)\\nSET(CMAKE_C_COMPILER /usr/share/clang/scan-build/ccc-analyzer)\\n\\n \" >> $YADEVEL/arc-from-346k-2/local.cmake'
+alias  prep_clang_static='rm $YADEVEL/arc/CMakeLists.txt.user;   rm $YADEVEL/arc/local.cmake;   printf \"ENABLE(NOLINK)\\nSET(USE_SANDBOX_COMPILER no)\\nSET(CMAKE_CXX_COMPILER /usr/share/clang/scan-build/c++-analyzer)\\nSET(CMAKE_C_COMPILER /usr/share/clang/scan-build/ccc-analyzer)\\n\\n \" >> $YADEVEL/arc/local.cmake;'
+alias prep2_clang_static='rm $YADEVEL/arc-2/CMakeLists.txt.user; rm $YADEVEL/arc-2/local.cmake; printf \"ENABLE(NOLINK)\\nSET(USE_SANDBOX_COMPILER no)\\nSET(CMAKE_CXX_COMPILER /usr/share/clang/scan-build/c++-analyzer)\\nSET(CMAKE_C_COMPILER /usr/share/clang/scan-build/ccc-analyzer)\\n\\n \" >> $YADEVEL/arc-2/local.cmake'
 
 THIS_IS_END_OF_HEREDOC
 )
@@ -240,9 +241,9 @@ function Usage() {
 if [ "$1" = "loon" ]
 then
    YADEVEL="/home/dimanne/devel"
-   MYDEVEL="/home/dimanne/mydevel"   
+   MYDEVEL="/home/dimanne/mydevel"
    eval "echo \"$COLOURIZED_PROMPT\""
-   eval "echo \"$COLOURIZED_GREP\""   
+   eval "echo \"$COLOURIZED_GREP\""
    eval "echo \"$COMMON_OTHER_ALIASES\""
    eval "echo \"$COMMON_GIT_ALIASES\""
    eval "echo \"$YA_RUN_BINARIES\""
