@@ -218,6 +218,8 @@ alias            ek='$YADEVEL/scripts/ExecuteOnAllKiwis.sh'
 # ================ common ================
 alias sbrsync='$YADEVEL/scripts/sandbox_rsync.py'
 
+difftolonnarc='git diff | ssh loon \"cd devel/arc && git apply\"'
+
 THIS_IS_END_OF_HEREDOC
 )
 
